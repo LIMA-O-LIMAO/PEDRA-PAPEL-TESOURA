@@ -1,12 +1,12 @@
 import './App.css';
 import { useState } from 'react';
-import imgagemEscolhida from './BRYAN.jpg'
+import imgagemEscolhida from './mao.png'
+import punho from './punho.png'
+import paz from './paz.png'
 function App() {
 
-
-
-
   const [Resultado, setResultado] = useState("");
+  const [Opacidade, setOpacidade] = useState();
 
   function clique(escolha) {
 
@@ -14,7 +14,7 @@ function App() {
    const TESOURA =2;
    const PEDRA =3;
     
- const numero = Math.floor(Math.random() *(3 - 1)) + 1;
+ const numero = Math.floor(Math.random() *(3 - 1 + 1)+ 1) ;
 
   const comp =numero;
     const jogador =escolha 
@@ -22,49 +22,67 @@ function App() {
     
 
     
-    console.log({numero})
+    console.log({escolha})
+    console.log({comp})
     
-    
-  if(jogador===PAPEL && comp===PAPEL){
+    //TODAS JOGADAS DO PAPEL-->
+      if(jogador===PAPEL && comp===PAPEL){
   
-         setResultado("empate");
-    console.log('papel empate')
-
-    console.log ({comp})
-    console.log ({jogador})
+         setResultado("Empate");
+     
+    }
+      if(jogador===PAPEL && comp===TESOURA){
+      
+        setResultado("Perdeu");
+    
     }
 
 
+       if(jogador===PAPEL && comp===PEDRA){
 
-      if(jogador===TESOURA && comp===TESOURA){
-  
-           setResultado("empate");
-           console.log('tesoura empate')
+        setResultado("Ganhou");
+      
       }
 
-
+//TODAS JOGADAS DE PEDRA
       if(jogador===PEDRA && comp===PEDRA){
       
-            setResultado("empate");
-            console.log('pedra empate')
+            setResultado("Empate");
+        
       }
 
-      if(jogador===PAPEL && comp===TESOURA){
-        console.log('Perdeu pra CPU otario!!')
-            setResultado("Perdeu pra CPU otario!!");
-        
-        }
+      
+      if(jogador===PEDRA && comp===PAPEL){
+      
+        setResultado("Perdeu");
+    
+  }
+
+      if(jogador===PEDRA && comp===TESOURA){
 
 
-      if(jogador===PAPEL && comp===PEDRA){
-        console.log("JOGADOR FEZ O BASICO")
-            setResultado("JOGADOR FEZ O BASICO");
-          
-          }
-
-     
+setResultado('Ganhou');
 
 
+}
+//TODAS JOGADAS DE TESOURA
+      if(jogador===TESOURA && comp===TESOURA){
+  
+        setResultado("Empate");
+   
+   }
+
+      if(jogador===TESOURA && comp===PAPEL){
+
+        setResultado("Ganhou");
+
+
+      }
+      if(jogador===TESOURA && comp==PEDRA){
+
+        setResultado("Perdeu");
+
+      }
 
 
 
@@ -73,30 +91,36 @@ function App() {
  
   return (
     <>
+    
     <div className="container">
        <div className="azul">
 
-              <button onClick={() =>clique(1)}>Pedra</button>
-              <button onClick={() =>clique(2)}>PAPEL</button>
-              <button onClick={() =>clique(3)}>TESOURA</button>
+<p>0</p>
+  
+<img className='jogador' src={imgagemEscolhida} alt="" onClick={() =>clique(1)} />
+<img className='jogador' src={paz} alt="" onClick={() =>clique(2)} />
+<img className='jogador' src={punho} alt="" onClick={() =>clique(3)} />
+             
              
       
-        </div>
+              </div>
+     
      
         <div className="vermelho">
-              <img src="" alt="" />
-              <img src="" alt=""/>
-              <img src="" alt=""data-valor="3"/> 
+        <p>0</p>
+              <img src={imgagemEscolhida} alt="" />
+              <img src={paz} alt=""/>
+              <img src={punho} alt=""data-valor="3"/> 
         </div>
    
 
-<li className="linha"> {} </li>
+
     </div>
     
+    <li className="linha"> {Resultado} </li>
 
 
-
-
+ 
 
     </>
   );
