@@ -31,7 +31,7 @@ align-items: center;
 .vermelho{
 
 
-  background-color: rgb(255, 54, 54);
+  background-color: rgba(212, 83, 83, 0.986);
   
 width: 300px;
 height: 200px;
@@ -58,11 +58,6 @@ transform: translateY(-5px);
 transition-duration:0.5s;
 }
 
-.jogador:focus-visible{
-
-  opacity: 1;
-
-  }
 
   p{
 position: absolute;

@@ -6,7 +6,9 @@ import paz from './paz.png'
 function App() {
 
   const [Resultado, setResultado] = useState("");
-  const [Opacidade, setOpacidade] = useState();
+  const [Vitoriaj, setvitoriaj] = useState(0);
+  const [Vitoriac, setvitoriac] = useState(0);
+
 
   function clique(escolha) {
 
@@ -19,7 +21,7 @@ function App() {
   const comp =numero;
     const jogador =escolha 
 
-    
+
 
     
     console.log({escolha})
@@ -34,6 +36,7 @@ function App() {
       if(jogador===PAPEL && comp===TESOURA){
       
         setResultado("Perdeu");
+        setvitoriac(Vitoriac+1)
     
     }
 
@@ -41,28 +44,28 @@ function App() {
        if(jogador===PAPEL && comp===PEDRA){
 
         setResultado("Ganhou");
-      
+        setvitoriaj(Vitoriaj+1);
       }
 
 //TODAS JOGADAS DE PEDRA
       if(jogador===PEDRA && comp===PEDRA){
       
             setResultado("Empate");
-        
-      }
+    
+            }
 
       
       if(jogador===PEDRA && comp===PAPEL){
       
         setResultado("Perdeu");
-    
+        setvitoriac(Vitoriac+1)
   }
 
       if(jogador===PEDRA && comp===TESOURA){
 
 
 setResultado('Ganhou');
-
+setvitoriaj(Vitoriaj+1);
 
 }
 //TODAS JOGADAS DE TESOURA
@@ -75,18 +78,25 @@ setResultado('Ganhou');
       if(jogador===TESOURA && comp===PAPEL){
 
         setResultado("Ganhou");
-
+        setvitoriaj(Vitoriaj+1);
 
       }
-      if(jogador===TESOURA && comp==PEDRA){
+      if(jogador===TESOURA && comp===PEDRA){
 
         setResultado("Perdeu");
-
+        setvitoriac(Vitoriac+1)
       }
 
 
+    //opacidade do jogador
+      document.getElementById("teste1").style.opacity=jogador===PAPEL?1 : 0.7;;;
+      document.getElementById("teste2").style.opacity= jogador===TESOURA?1 : 0.7;;
+      document.getElementById("teste3").style.opacity= jogador===PEDRA?1 : 0.7;;
 
-
+      //opacidade do computador
+      document.getElementById("valor1").style.opacity=comp===PAPEL?1 : 0.5;;;
+      document.getElementById("valor2").style.opacity= comp===TESOURA?1 : 0.5;;
+      document.getElementById("valor3").style.opacity= comp===PEDRA?1 : 0.5;;
       }
  
   return (
@@ -95,11 +105,11 @@ setResultado('Ganhou');
     <div className="container">
        <div className="azul">
 
-<p>0</p>
+<p>{Vitoriaj}</p>
   
-<img className='jogador' src={imgagemEscolhida} alt="" onClick={() =>clique(1)} />
-<img className='jogador' src={paz} alt="" onClick={() =>clique(2)} />
-<img className='jogador' src={punho} alt="" onClick={() =>clique(3)} />
+<img className='jogador' src={imgagemEscolhida} id='teste1' alt="" onClick={() =>clique(1)} />
+<img className='jogador' src={paz} alt="" id='teste2' onClick={() =>clique(2)} />
+<img className='jogador' src={punho} alt="" id='teste3' onClick={() =>clique(3)} />
              
              
       
@@ -107,10 +117,10 @@ setResultado('Ganhou');
      
      
         <div className="vermelho">
-        <p>0</p>
-              <img src={imgagemEscolhida} alt="" />
-              <img src={paz} alt=""/>
-              <img src={punho} alt=""data-valor="3"/> 
+        <p>{Vitoriac}</p>
+              <img src={imgagemEscolhida} alt="" id='valor1' />
+              <img src={paz} alt="" id='valor2'/>
+              <img src={punho} alt="" id='valor3'/> 
         </div>
    
 
