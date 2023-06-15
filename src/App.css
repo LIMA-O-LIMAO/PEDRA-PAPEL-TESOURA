@@ -1,67 +1,127 @@
-body{
+body {
 
-width: 100vw;
-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4vw;
+  align-items: center;
+  height: 80vh;
+
 
 }
 
-.container{
-display: flex;
-flex-direction: row;
-justify-content: center;
-gap: 7vw;
-align-items: center;
-height:80vh;
+.azul {
 
 
+  background-color: rgb(0, 119, 255);
+
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
 }
-.azul{
 
-
-  background-color: aqua;
-  
-width: 300px;
-height: 200px;
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
-
-}
-.vermelho{
+.vermelho {
 
 
   background-color: rgba(212, 83, 83, 0.986);
-  
-width: 300px;
-height: 200px;
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
 
-}
-img{
-width:75px;
-height:75px ;
-
-opacity: 0.7;
-
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
 }
 
+img {
+  width: 75px;
+  height: 75px;
 
-.jogador:hover{
+  opacity: 0.7;
 
-opacity: 1;
-cursor: pointer;
-transform: translateY(-5px);
-transition-duration:0.5s;
 }
 
 
-  p{
-position: absolute;
-height: 200px
-  }
+.jogador:hover {
+
+  opacity: 1;
+  cursor: pointer;
+  transform: translateY(-5px);
+  transition-duration: 0.5s;
+}
 
 
+h2 {
+  position: absolute;
+  height: 190px
+}
+
+.placar1 {
+
+  position: absolute;
+  height: 190px;
+
+  right: 57.3vw;
+  font-family: cursive;
+}
+
+.placar2 {
+
+  position: absolute;
+  height: 190px;
+
+  left: 57.3vw;
+  font-family: cursive;
+}
+
+.game,
+.pc {
+
+  position: absolute;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.game {
+  height: 190px;
+  right: 69vw;
+}
+
+.pc {
+
+  height: 190px;
+  left: 69vw;
+
+}
+
+.game,
+.pc,
+.placar1,
+.placar2 {
+
+  color: #ffff;
+}
+
+.vs {
+
+  width: 100px;
+  height: 90px;
+
+}
+
+button {
+
+
+  position: absolute;
+  bottom: 45vh;
+}
