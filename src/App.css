@@ -119,9 +119,26 @@ h2 {
 
 }
 
-button {
+.reinicio {
 
 
   position: absolute;
   bottom: 45vh;
+text-decoration: none;
+text-transform:uppercase ;
+font-weight: bold;
+padding: 8px 30px;
+border: 2px solid rgba(94, 94, 94, 0.74);
+background-color: rgb(255, 255, 255);
+border-radius: 4px;
+
+
+}
+
+.reinicio:hover{
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+cursor: pointer;
+
+transform: translateY(-4px);
+transition-duration: 0.5s;
 }

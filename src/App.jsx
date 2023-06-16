@@ -4,6 +4,7 @@ import imgagemEscolhida from './mao.png'
 import punho from './punho.png'
 import paz from './paz.png'
 import vs from './vs.png'
+
 function App() {
 
   const [Resultado, setResultado] = useState("");
@@ -141,10 +142,9 @@ function App() {
           <img src={punho} alt="" id='valor3' />
         </div>
 
-        <button className='reinicio' onClick={Reiniciar}>Reiniciar</button>
+        <p className='reinicio' onClick={Reiniciar}>Reiniciar</p>
 
       </div>
-
 
 
 
